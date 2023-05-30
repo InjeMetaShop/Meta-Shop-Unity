@@ -1,0 +1,31 @@
+## 유니티로 증강현실 빌드하기
+
+- File → BuildSettings 윈도우(Android),맥(IOS) → Switch Platform
+- 모바일 버전의 해상도 맞춰주기(1920*1080 Portrait이 일반적임)
+- Edit → Project Settings → XR Plugin Management → ARCore
+
+- Window → Package Manager → Unity Registry
+    - ARFoundation 다운
+    - ARCore XR Plugin 다운
+    - XR Plugin Management 다운
+
+- File → BuildSettings → Add Open Scenes 오픈된 씬 선택 → Player Settings
+    - Company Name(소속된 회사 이름,팀이름)
+    - Product Name(프로그램의 이름)
+    - Version(버전 선택→ 업데이트시 알 수 있는 지표)
+    - Default Icon → 어플 아이콘 선택
+
+- Other Settings → Color Space → Gamma에서 Linear로 변경
+- Graphics APIs → vulkan삭제 (AR에서는 불칸이라는 그래픽 api를 지원하지 않음)
+    - Auto Graphics API를 해제하면 보임
+- Multithreaded Rendering해제(AR에서 지원 해주지 않음)
+- Minimum API Level → 안드로이드 Level 최소 24 이상
+- Scripting Backend → IL2CPP변경
+- ARM64체크
+- Api Compatibility Level → .NET 4.x변경
+
+이 변경들은 최신 스마트폰을 위한 설정들임
+
+프로젝트 세팅에서 Editor→ Device → Any Android Device
+
+세팅 후 핸드폰도 권한을 풀어줘야함

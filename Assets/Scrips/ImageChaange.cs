@@ -9,7 +9,7 @@ public class ImageChaange : MonoBehaviour
     Image thisImg;
     Btn1 btn;
     GameObject GameObJect;
-    // Start is called before the first frame update
+    // Start is called before the first frame qupdate
     void Start()
     {
         thisImg = GetComponent<Image>();
