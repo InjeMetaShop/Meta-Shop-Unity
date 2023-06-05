@@ -24,7 +24,6 @@ public class Upmanager : MonoBehaviour
     {
         uplist.Add("TOP_001_UV 1");
         uplist.Add("TOP_001_UV");
-        button.creat();
         Debug.Log(uplist.Count);
     }
 

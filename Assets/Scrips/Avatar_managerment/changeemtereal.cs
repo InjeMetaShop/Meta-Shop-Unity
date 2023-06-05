@@ -22,6 +22,4 @@ public class changeemtereal : MonoBehaviour
         gObject = manager.getup();
         gObject.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + number);
     }
-
-
 }

@@ -29,13 +29,6 @@ public class uo_button_cerate : MonoBehaviour
         uplist = manager.getUplist();
     }
 
-    public void creat(){
-        for (int i = 0; i < uplist.Count; i++)
-        {
-            Instantiate(button, transform.position, transform.rotation, transform);
-        }
-    }
-
     public int getnember()
     {
         return number++;
