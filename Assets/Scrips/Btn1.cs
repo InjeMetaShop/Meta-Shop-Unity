@@ -12,7 +12,6 @@ public class Btn1 : MonoBehaviour
     public static  int sexcount = 0;
     public static GameObject[] avatar;
  
-    static int ImageCount = 0;
     private void initAvatarArr()
     {
         avatar = new GameObject[]{

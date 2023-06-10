@@ -19,12 +19,13 @@ public class Scroll : MonoBehaviour
 
     void Start()
     {
+        currentOption = 0;
         options = this.GetComponent<TMP_Dropdown>();
 
         options.value = currentOption;
 
         options.onValueChanged.AddListener(delegate { setDropDown(options.value); });
-        setDropDown(currentOption); //최초 옵션 실행이 필요한 경우
+        setDropDown(currentOption); 
     }
 
     void setDropDown(int option)

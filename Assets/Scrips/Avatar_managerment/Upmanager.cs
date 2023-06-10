@@ -24,7 +24,7 @@ public class Upmanager : MonoBehaviour
     {
         uplist.Add("TOP_001_UV 1");
         uplist.Add("TOP_001_UV");
-        Debug.Log(uplist.Count);
+        
     }
 
     // Update is called once per frame
