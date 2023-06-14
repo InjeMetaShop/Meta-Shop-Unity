@@ -13,7 +13,11 @@ public class scrollView : MonoBehaviour
     public RawImage uiPrefab;
     RawImage uiPrefab_sub;
 
+    images image_sub;
+    int number;
+
     public List<RawImage> uiObjects = new List<RawImage>();
+    string  parts;
 
     void Start()
     {
@@ -34,10 +38,23 @@ public class scrollView : MonoBehaviour
         uiPrefab_sub = Instantiate(uiPrefab, scrollRect.content);
         uiObjects.Add(uiPrefab_sub);
         var newUI = uiPrefab_sub.GetComponent<RectTransform>();
-        
+        number = uiObjects.IndexOf(uiPrefab_sub);
 
         x += space;
         newUI.anchoredPosition = new Vector2(x, 0f);
         scrollRect.content.sizeDelta = new Vector2(50f, scrollRect.content.sizeDelta.y);
+
+        image_sub = uiPrefab_sub.GetComponent<images>();
+        setimages(image_sub);
+    }
+
+    public void setParts(string part)
+    {
+        parts = part;
+    }
+
+    void setimages(images image_sub)
+    {
+        image_sub.setinit(number, parts);
     }
 }

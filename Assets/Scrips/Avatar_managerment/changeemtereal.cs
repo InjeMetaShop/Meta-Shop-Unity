@@ -6,20 +6,30 @@ public class changeemtereal : MonoBehaviour
 {
     public int number;
     GameObject gObject;
-    uo_button_cerate manager;
-    string url = "Material/TOP_001_UV ";
+    scrollView scrollview;
+    Upmanager manager;
+    images images_sub;
+
+    string parts;
+    string url = "Material/";
 
     // Start is called before the first frame update
     void Start()
     {
-        manager = uo_button_cerate.Instance;
-        number = manager.getnember();
+        images images_sub = gameObject.GetComponent<images>();
     }
 
+
+    public void setparts(string partsed)
+    {
+        parts = partsed;
+        url = url + parts + "/";
+    }
     // Update is called once per frame
     public void ChangeMaterial()
     {
-        gObject = manager.getup();
+        number  = images_sub.getNumber();
+        gObject = manager.getobject(parts);
         gObject.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + number);
     }
 }

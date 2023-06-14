@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Upmanager : MonoBehaviour
 {
-    List<string> uplist = new List<string>();
     // Start is called before the first frame update
     public uo_button_cerate button;
 
     static Upmanager instance;
+
+    public GameObject Upobject;
+    public GameObject Downobject;
+    public GameObject Capobject;
+    public GameObject Setobjact;
 
     public static Upmanager Instance
     {
@@ -20,16 +24,23 @@ public class Upmanager : MonoBehaviour
         }
     }
 
-    void Start()
+    public GameObject getobject(string part)
     {
-        uplist.Add("TOP_001_UV 1");
-        uplist.Add("TOP_001_UV");
-        
-    }
-
-    // Update is called once per frame
-    public List<string> getUplist()
-    {
-        return uplist;
+        if(part == "up"){
+            return Upobject;
+        }
+        else if(part == "down")
+        {
+            return Downobject;
+        }
+        else if (part == "cap")
+        {
+            return Capobject;
+        }
+        else if(part == "set")
+        {
+            return Setobjact;
+        }
+        return Upobject;
     }
 }

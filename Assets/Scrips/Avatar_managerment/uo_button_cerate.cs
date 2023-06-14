@@ -26,7 +26,6 @@ public class uo_button_cerate : MonoBehaviour
     void Start()
     {
         manager = Upmanager.Instance;
-        uplist = manager.getUplist();
     }
 
     public int getnember()

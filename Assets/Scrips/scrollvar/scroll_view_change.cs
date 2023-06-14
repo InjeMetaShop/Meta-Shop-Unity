@@ -36,6 +36,7 @@ public class scroll_view_change : MonoBehaviour
 
     public void PageChange(Scroll objects)
     {
+        view.ComponentClear();
         scroll = objects.GetComponent<Scroll>();
         page = scroll.getPlayerkey();
         back.setcategory(page_name[page]);
@@ -43,9 +44,9 @@ public class scroll_view_change : MonoBehaviour
 
 
         Debug.Log(""+back.getProductDataSize());
+        view.setParts(page_name[page]);
         for(int i=0; i < 10; i++){
             view.AddNewUiObject();
         } 
     }
-
 }
