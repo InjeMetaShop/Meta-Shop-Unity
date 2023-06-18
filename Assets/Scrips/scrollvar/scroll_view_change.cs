@@ -7,6 +7,7 @@ public class scroll_view_change : MonoBehaviour
     int page;
 
     public Back back;
+
     public class ProductData
     {
         public string id;
@@ -36,16 +37,15 @@ public class scroll_view_change : MonoBehaviour
 
     public void PageChange(Scroll objects)
     {
-        view.ComponentClear();
+
         scroll = objects.GetComponent<Scroll>();
-        page = scroll.getPlayerkey();
+        page = scroll.getPlayerkey();               // 언디가
+
         back.setcategory(page_name[page]);
         back.GetCategoryData();
 
-
-        Debug.Log(""+back.getProductDataSize());
-        view.setParts(page_name[page]);
-        for(int i=0; i < 10; i++){
+        view.setParts(page_name[page-1]);
+        for(int i=0; i < back.getProductDataSize(); i++){
             view.AddNewUiObject();
         } 
     }

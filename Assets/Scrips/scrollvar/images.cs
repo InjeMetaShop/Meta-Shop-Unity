@@ -10,7 +10,7 @@ public class images : MonoBehaviour
     // Start is called before the first frame update
     public void setinit(int num, string part)
     {
-        num = number;
+        number = num;
         parts = part;
     }
 

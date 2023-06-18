@@ -24,6 +24,7 @@ public class Scroll : MonoBehaviour
 
         options.value = currentOption;
 
+        Debug.Log("start " + options.value);
         options.onValueChanged.AddListener(delegate { setDropDown(options.value); });
         setDropDown(currentOption); 
     }

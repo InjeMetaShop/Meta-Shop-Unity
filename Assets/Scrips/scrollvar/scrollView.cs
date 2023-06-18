@@ -38,7 +38,7 @@ public class scrollView : MonoBehaviour
         uiPrefab_sub = Instantiate(uiPrefab, scrollRect.content);
         uiObjects.Add(uiPrefab_sub);
         var newUI = uiPrefab_sub.GetComponent<RectTransform>();
-        number = uiObjects.IndexOf(uiPrefab_sub);
+        number = uiObjects.Count -1;
 
         x += space;
         newUI.anchoredPosition = new Vector2(x, 0f);
