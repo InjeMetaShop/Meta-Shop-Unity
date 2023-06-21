@@ -21,7 +21,6 @@ public class scroll_view_change : MonoBehaviour
     Scroll scroll;
     List<string> page_name = new List<string>();
     List<ProductData> productdata;
-
     scrollView view;
     ScrollRect scrollRect;
 
@@ -30,23 +29,31 @@ public class scroll_view_change : MonoBehaviour
     {
         scrollRect = GameObject.Find("Scroll View").GetComponent<ScrollRect>();
         view = scrollRect.content.GetComponent<scrollView>();
-        page = -1;
+        page_name.Add("cap");
         page_name.Add("up");
         page_name.Add("down");
+        page_name.Add("set");
+        page_name.Add("shose");
+        page_name.Add("earing");
     }
 
     public void PageChange(Scroll objects)
     {
-
         scroll = objects.GetComponent<Scroll>();
-        page = scroll.getPlayerkey();               // 언디가
+        page = scroll.getPlayerkey() -1;               // 언디가
 
+        view.ComponentClear();
         back.setcategory(page_name[page]);
-        back.GetCategoryData();
+        back.GetCategoryData(this);
 
-        view.setParts(page_name[page-1]);
-        for(int i=0; i < back.getProductDataSize(); i++){
+    }
+
+    public void CereatImage()
+    {
+        view.setParts(page_name[page]);
+        for (int i = 0; i < back.getProductDataSize(); i++)
+        {
             view.AddNewUiObject();
-        } 
+        }
     }
 }

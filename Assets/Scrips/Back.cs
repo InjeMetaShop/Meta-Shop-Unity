@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 public class Back : MonoBehaviour
 {
     string category;
+    scroll_view_change view;
 
     [System.Serializable]
     public class ProductData
@@ -15,6 +16,7 @@ public class Back : MonoBehaviour
         public string name;
         public int price;
         public string imagePath;
+        public string fbxPath;
         public string sex;
         public string category;
     }
@@ -23,29 +25,19 @@ public class Back : MonoBehaviour
         category = a;
     }
 
-    string url;
-
     List<ProductData> users;
 
-    private const string apiUrl = "http://localhost:8080/api/product/all";
+    private const string apiUrl = "http://localhost:8080/api/product/category/";  // 192.168.0.29
 
-    void Start()
-    {
-        category = "up";
-        StartCoroutine(GetCategoryDataProcess());
-    }
-
-    public void GetCategoryData()
+    public void GetCategoryData(scroll_view_change view_sub)
     {
         StartCoroutine(GetCategoryDataProcess());
+        view = view_sub;
     }
 
     IEnumerator GetCategoryDataProcess()
     {
-        // GET 요청을 보낼 URL 생성
-        string url = apiUrl;
-
-        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        using (UnityWebRequest www = UnityWebRequest.Get(apiUrl + category))
         {
             // 요청 보내기
             yield return www.SendWebRequest();
@@ -53,15 +45,14 @@ public class Back : MonoBehaviour
             // 응답 처리
             if (www.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("요청 성공!");
-
                 // 응답 데이터 가져오기
                 string responseText = www.downloadHandler.text;
                 Debug.Log(responseText);
 
                 // JSON 배열 데이터 역직렬화
                 users = JsonConvert.DeserializeObject<List<ProductData>>(responseText);
-
+                
+                view.CereatImage();
             }
             else
             {

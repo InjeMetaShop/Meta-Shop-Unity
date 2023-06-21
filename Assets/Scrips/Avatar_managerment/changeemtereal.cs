@@ -25,7 +25,7 @@ public class changeemtereal : MonoBehaviour
     {
         url = "Image/";
         parts = partsed;
-        url = url + parts + "/";
+        url = url + parts + "/" ;
     }
 
     // Update is called once per frame
@@ -33,12 +33,14 @@ public class changeemtereal : MonoBehaviour
     {
         number  = images_sub.getNumber();
         setparts(images_sub.getParts());
-        gObject = Resources.Load<GameObject>(url + "prefab/" + number);
+        gObject = Resources.Load<GameObject>(url + "prefab/" + parts + "_" + number);
+
 
         instance.SDetroy(parts);
         gObject_sub = Instantiate(gObject, instance.getman().transform);
 
         instance.setobject(parts, gObject_sub);
-        gObject_sub.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + number);
+        Debug.Log(url + "Materials/" + parts + "_" + number);
+        gObject_sub.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
     }
 }

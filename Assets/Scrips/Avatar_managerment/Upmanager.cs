@@ -5,15 +5,14 @@ using UnityEngine;
 public class Upmanager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public uo_button_cerate button;
-
     static Upmanager instance;
-
     public GameObject man2;
+    public GameObject Capobject;
     public GameObject Upobject;
     public GameObject Downobject;
-    public GameObject Capobject;
     public GameObject Setobjact;
+    public GameObject shoseobjact;
+    public GameObject earingobjact;
 
     GameObject object1;
 
@@ -30,7 +29,6 @@ public class Upmanager : MonoBehaviour
     public void setobject(string part, GameObject g)
     {
         if(part == "up"){
-            Debug.Log("성공");
             Upobject =  g;
         }
         else if(part == "down")
@@ -42,6 +40,14 @@ public class Upmanager : MonoBehaviour
             Capobject = g;
         }
         else if(part == "set")
+        {
+            Setobjact = g;
+        }
+        else if (part == "shose")
+        {
+            Setobjact = g;
+        }
+        else if (part == "earing")
         {
             Setobjact = g;
         }
@@ -57,8 +63,6 @@ public class Upmanager : MonoBehaviour
         if (part == "up")
         {
             object1 = Upobject;
-            Debug.Log("Upobject" + Upobject);
-            Debug.Log("object1"+object1);
             Destroy(object1);
         }
         else if (part == "down")
@@ -72,6 +76,14 @@ public class Upmanager : MonoBehaviour
         else if (part == "set")
         {
             Destroy(Setobjact);
+        }
+        else if (part == "shose")
+        {
+            Destroy(shoseobjact);
+        }
+        else if (part == "earing")
+        {
+            Destroy(earingobjact);
         }
     }
 }
