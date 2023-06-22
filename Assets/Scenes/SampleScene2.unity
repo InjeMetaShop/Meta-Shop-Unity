@@ -167,11 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da6803484ade384b86c50a29dcd90cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 85956573}
+  man2: {fileID: 0}
+  Capobject: {fileID: 0}
   Upobject: {fileID: 0}
   Downobject: {fileID: 0}
-  Capobject: {fileID: 0}
   Setobjact: {fileID: 0}
+  shoseobjact: {fileID: 0}
+  earingobjact: {fileID: 0}
 --- !u!4 &85956575
 Transform:
   m_ObjectHideFlags: 0
@@ -621,23 +623,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 541
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 166
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -671,6 +673,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5024372040355600792, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -683,6 +689,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d9dcd376b53f1a549b6ad417ae274289, type: 2}
+    - target: {fileID: 8162743097729400807, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.509
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f872e24a52d7e8e4faacdc77651047ea, type: 3}
 --- !u!4 &592468082 stripped

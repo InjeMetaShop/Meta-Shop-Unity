@@ -53,7 +53,7 @@ public class scroll_view_change : MonoBehaviour
         view.setParts(page_name[page]);
         for (int i = 0; i < back.getProductDataSize(); i++)
         {
-            view.AddNewUiObject();
+            view.AddNewUiObject(back.getimagepath(i));
         }
     }
 }

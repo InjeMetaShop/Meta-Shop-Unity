@@ -34,7 +34,7 @@ public class scrollView : MonoBehaviour
     }
 
 
-    public void AddNewUiObject()
+    public void AddNewUiObject(string imagepath)
     {
         uiPrefab_sub = Instantiate(uiPrefab, scrollRect.content);
         uiObjects.Add(uiPrefab_sub);
@@ -45,7 +45,7 @@ public class scrollView : MonoBehaviour
         scrollRect.content.sizeDelta = new Vector2(50f, scrollRect.content.sizeDelta.y);
 
         image_sub = uiPrefab_sub.GetComponent<images>();
-        setimages(image_sub);
+        setimages(image_sub, imagepath);
     }
 
     public void setParts(string part)
@@ -53,9 +53,9 @@ public class scrollView : MonoBehaviour
         parts = part;
     }
 
-    void setimages(images image_sub)
+    void setimages(images image_sub, string imagepath)
     {
-        image_sub.setinit(number, parts);
+        image_sub.setinit(number, parts, imagepath);
         number++;
     }
 }
