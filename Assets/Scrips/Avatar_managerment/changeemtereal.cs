@@ -41,6 +41,10 @@ public class changeemtereal : MonoBehaviour
 
         instance.setobject(parts, gObject_sub);
         Debug.Log(url + "Materials/" + parts + "_" + number);
-        gObject_sub.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
+        try{
+            gObject_sub.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
+        } catch{
+            gObject_sub.GetComponent<MeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
+        }
     }
 }
