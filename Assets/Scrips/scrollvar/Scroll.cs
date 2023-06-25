@@ -8,6 +8,8 @@ public class Scroll : MonoBehaviour
     string DROPDOWN_KEY = "DROPDOWN_KEY";
 
     int currentOption;
+
+    bool enable;
     
     TMP_Dropdown options;
 
@@ -27,6 +29,7 @@ public class Scroll : MonoBehaviour
         Debug.Log("start " + options.value);
         options.onValueChanged.AddListener(delegate { setDropDown(options.value); });
         setDropDown(currentOption); 
+        enable = false;
     }
 
     void setDropDown(int option)
@@ -39,5 +42,19 @@ public class Scroll : MonoBehaviour
 
     public int getPlayerkey(){
         return options.value;
+    }
+
+    public void scroll_enable()
+    {
+        if(enable)
+        {
+            gameObject.SetActive(false);
+            enable = false;
+        }
+        else
+        {
+            gameObject.SetActive(true);
+            enable = true;
+        }
     }
 }

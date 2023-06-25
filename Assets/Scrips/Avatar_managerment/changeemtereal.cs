@@ -33,19 +33,30 @@ public class changeemtereal : MonoBehaviour
     {
         number  = images_sub.getNumber();
         setparts(images_sub.getParts());
-        gObject = Resources.Load<GameObject>(url + "prefab/" + parts + "_" + number);
+        if(number == -1)
+        {
+            instance.SDetroy(parts);
+            GameObject gmae = instance.GetObject(parts);
+            gmae = null;
+        }
+        else
+        {
+            gObject = Resources.Load<GameObject>(url + "prefab/" + parts + "_" + number);
 
-        instance.setbody(parts);
+            instance.setbody(parts);
+            if(instance.GetObject(parts) != null)
+            {
+                instance.SDetroy(parts);
+            }
+            gObject_sub = Instantiate(gObject, instance.getman().transform);
 
-        instance.SDetroy(parts);
-        gObject_sub = Instantiate(gObject, instance.getman().transform);
-
-        instance.setobject(parts, gObject_sub);
-        Debug.Log(url + "Materials/" + parts + "_" + number);
-        try{
-            gObject_sub.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
-        } catch{
-            gObject_sub.GetComponent<MeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
+            instance.setobject(parts, gObject_sub);
+            Debug.Log(url + "Materials/" + parts + "_" + number);
+            try{
+                gObject_sub.GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
+            } catch{
+                gObject_sub.GetComponent<MeshRenderer>().material = Resources.Load<Material>(url + "Materials/" + parts + "_" + number);
+            }
         }
     }
 }

@@ -6,6 +6,10 @@ public class URL : MonoBehaviour
 {
     public void GoogleURL()
     {
-        Application.OpenURL("http://192.168.0.122:3000/");
+        try {
+            Application.OpenURL("http://locallhost:3000/");
+        }   catch {
+            Application.OpenURL("http://192.168.0.183:3000/");
+        }
     }
 }

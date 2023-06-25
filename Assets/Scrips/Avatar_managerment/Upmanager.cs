@@ -11,8 +11,7 @@ public class Upmanager : MonoBehaviour
     public GameObject Upobject;
     public GameObject Downobject;
     public GameObject Setobjact;
-    public GameObject shoseobjact;
-    public GameObject earingobjact;
+    public GameObject shoesobjact;
 
     GameObject object1;
 
@@ -43,13 +42,9 @@ public class Upmanager : MonoBehaviour
         {
             Setobjact = g;
         }
-        else if (part == "shose")
+        else if (part == "shoes")
         {
-            Setobjact = g;
-        }
-        else if (part == "earing")
-        {
-            Setobjact = g;
+            shoesobjact = g;
         }
     }
 
@@ -77,29 +72,78 @@ public class Upmanager : MonoBehaviour
         {
             Destroy(Setobjact);
         }
-        else if (part == "shose")
+        else if (part == "shoes")
         {
-            Destroy(shoseobjact);
+            Destroy(shoesobjact);
         }
-        else if (part == "earing")
+    }
+
+    public GameObject GetObject(string part)
+    {
+        if (part == "up")
         {
-            Destroy(earingobjact);
+           return Upobject;
         }
+        else if (part == "down")
+        {
+            return Downobject;
+        }
+        else if (part == "cap")
+        {
+            return Capobject;
+        }
+        else if (part == "set")
+        {
+            return Setobjact;
+        }
+        else if (part == "shoes")
+        {
+            return shoesobjact;
+        }   
+        else
+            return null;
     }
 
     public void setbody(string parts)
     {
         if(parts == "set")
         {
-            Upobject.SetActive(false);
-            Downobject.SetActive(false);
-            Setobjact.SetActive(true);
+            if(check_null_object("up"))
+            {
+                Upobject.SetActive(false);
+            } 
+            if(check_null_object("down"))
+            {
+                Downobject.SetActive(false);
+            } 
+            if(check_null_object("set"))
+            {
+                Setobjact.SetActive(true);
+            } 
         }
         else if(parts == "up" || parts == "down")
         {
-            Upobject.SetActive(true);
-            Downobject.SetActive(true);
-            Setobjact.SetActive(false);
+            if(check_null_object("up"))
+            {
+                Upobject.SetActive(true);
+            } 
+            if(check_null_object("down"))
+            {
+                Downobject.SetActive(true);
+            } 
+            if(check_null_object("set"))
+            {
+                Setobjact.SetActive(false);
+            } 
         }
+    }
+    bool check_null_object(string part)
+    {
+        if(GetObject(part) == null)
+        {
+            return false;
+        }
+        else 
+            return true;
     }
 }

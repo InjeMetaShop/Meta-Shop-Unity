@@ -26,6 +26,12 @@ public class FaceTrackingButton : MonoBehaviour
         currentGameObject = gameObject;
         UpdateARFacePrefab2();
     }
+    public void UpdateFaceNull(GameObject gameObject)
+    {
+        currentGameObject = gameObject;
+        UpdateARFaceNull();
+    }
+
     private void UpdateARFacePrefab()
     {
         Destroy(GameObject.FindWithTag("FaceMaskCamera"));

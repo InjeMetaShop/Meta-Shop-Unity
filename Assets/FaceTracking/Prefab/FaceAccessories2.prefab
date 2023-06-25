@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987979607263605229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.006, z: 0.054}
+  m_LocalPosition: {x: 0, y: 0.039, z: 0.054}
   m_LocalScale: {x: 0.15, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,7 +127,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 732027785980021552}
-  - {fileID: 2194718605090837918}
+  - {fileID: 5156799199439723954}
   - {fileID: 8728628174556228691}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -216,11 +216,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Hat
       objectReference: {fileID: 0}
+    - target: {fileID: 5580142137619978926, guid: ad86a024b3adea54880bc1554cc83710, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580142137619978926, guid: ad86a024b3adea54880bc1554cc83710, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1114
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad86a024b3adea54880bc1554cc83710, type: 3}
---- !u!4 &2194718605090837918 stripped
+--- !u!4 &5156799199439723954 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1483145288644940418, guid: ad86a024b3adea54880bc1554cc83710, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5580142137619978926, guid: ad86a024b3adea54880bc1554cc83710, type: 3}
   m_PrefabInstance: {fileID: 783630979525281564}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &982371969304587483

@@ -28,8 +28,8 @@ public class Back : MonoBehaviour
 
     List<ProductData> users;
 
-    private const string apiUrl = "http://localhost:8080/api/product/category/";  // 192.168.0.183
-    //private const string apiUrl = "http://192.168.0.183:8080/api/product/category/";
+    //private const string apiUrl = "http://localhost:8080/api/product/category/";  // 192.168.0.183
+    private const string apiUrl = "http://192.168.0.183:8080/api/product/category/";
     public void GetCategoryData(scroll_view_change view_sub)
     {
         StartCoroutine(GetCategoryDataProcess());

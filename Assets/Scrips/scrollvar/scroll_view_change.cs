@@ -33,8 +33,7 @@ public class scroll_view_change : MonoBehaviour
         page_name.Add("up");
         page_name.Add("down");
         page_name.Add("set");
-        page_name.Add("shose");
-        page_name.Add("earing");
+        page_name.Add("shoes");
     }
 
     public void PageChange(Scroll objects)
@@ -43,9 +42,33 @@ public class scroll_view_change : MonoBehaviour
         page = scroll.getPlayerkey() -1;               // 언디가
 
         view.ComponentClear();
-        back.setcategory(page_name[page]);
-        back.GetCategoryData(this);
-
+        if(page == -1)
+        {
+            view.setParts(page_name[page]);
+            view.AddNewUiObject("Image/up/up_0");
+            view.AddNewUiObject("Image/up/up_1");
+            view.AddNewUiObject("null_image");
+        }
+        else if(page == 1 || page == 2)
+        {
+            if(page==1)
+            {
+                view.setParts(page_name[page]);
+                view.AddNewUiObject("Image/up/up_0");
+                view.AddNewUiObject("Image/up/up_1");
+                view.AddNewUiObject("null_image");
+            } else if(page ==2)
+            {
+                view.setParts(page_name[page]);
+                view.AddNewUiObject("Image/down/down_0");
+                view.AddNewUiObject("Image/down/down_1");
+                view.AddNewUiObject("null_image");
+            }
+        } else
+        {
+            back.setcategory(page_name[page]);
+            back.GetCategoryData(this);
+        }
     }
 
     public void CereatImage()
@@ -55,5 +78,6 @@ public class scroll_view_change : MonoBehaviour
         {
             view.AddNewUiObject(back.getimagepath(i));
         }
+        view.AddNewUiObject("null_image");
     }
 }

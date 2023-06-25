@@ -36,16 +36,32 @@ public class scrollView : MonoBehaviour
 
     public void AddNewUiObject(string imagepath)
     {
-        uiPrefab_sub = Instantiate(uiPrefab, scrollRect.content);
-        uiObjects.Add(uiPrefab_sub);
-        var newUI = uiPrefab_sub.GetComponent<RectTransform>();
+        if(imagepath != "null_image")
+        {
+            uiPrefab_sub = Instantiate(uiPrefab, scrollRect.content);
+            uiObjects.Add(uiPrefab_sub);
+            var newUI = uiPrefab_sub.GetComponent<RectTransform>();
 
-        x += space;
-        newUI.anchoredPosition = new Vector2(x, 0f);
-        scrollRect.content.sizeDelta = new Vector2(50f, scrollRect.content.sizeDelta.y);
+            x += space;
+            newUI.anchoredPosition = new Vector2(x, 0f);
+            scrollRect.content.sizeDelta = new Vector2(50f, scrollRect.content.sizeDelta.y);
 
-        image_sub = uiPrefab_sub.GetComponent<images>();
-        setimages(image_sub, imagepath);
+            image_sub = uiPrefab_sub.GetComponent<images>();
+            setimages(image_sub, imagepath);
+        }
+        else
+        {
+            uiPrefab_sub = Instantiate(uiPrefab, scrollRect.content);
+            uiObjects.Add(uiPrefab_sub);
+            var newUI = uiPrefab_sub.GetComponent<RectTransform>();
+
+            x += space;
+            newUI.anchoredPosition = new Vector2(x, 0f);
+            scrollRect.content.sizeDelta = new Vector2(50f, scrollRect.content.sizeDelta.y);
+
+            image_sub = uiPrefab_sub.GetComponent<images>();
+            image_sub.setnull(parts);
+        }
     }
 
     public void setParts(string part)

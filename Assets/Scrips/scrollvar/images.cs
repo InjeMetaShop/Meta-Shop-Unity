@@ -15,8 +15,23 @@ public class images : MonoBehaviour
     {
         number = num;
         parts = part;
-        StartCoroutine(GetTexture(imagepath));
+        if(part == "up" || part == "down")
+        {
+            image = Resources.Load<Texture>(imagepath);
+            gameObject.GetComponent<RawImage>().texture = image;
+        } else{
+            StartCoroutine(GetTexture(imagepath));
+        }
     }
+
+    public void setnull(string part)
+    {
+        number = -1;
+        parts = part;
+        image = Resources.Load<Texture>("Image/null");
+        gameObject.GetComponent<RawImage>().texture = image;
+    }
+
 
     public int getNumber()
     {
