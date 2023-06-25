@@ -86,4 +86,20 @@ public class Upmanager : MonoBehaviour
             Destroy(earingobjact);
         }
     }
+
+    public void setbody(string parts)
+    {
+        if(parts == "set")
+        {
+            Upobject.SetActive(false);
+            Downobject.SetActive(false);
+            Setobjact.SetActive(true);
+        }
+        else if(parts == "up" || parts == "down")
+        {
+            Upobject.SetActive(true);
+            Downobject.SetActive(true);
+            Setobjact.SetActive(false);
+        }
+    }
 }

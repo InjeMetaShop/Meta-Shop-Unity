@@ -35,6 +35,7 @@ public class changeemtereal : MonoBehaviour
         setparts(images_sub.getParts());
         gObject = Resources.Load<GameObject>(url + "prefab/" + parts + "_" + number);
 
+        instance.setbody(parts);
 
         instance.SDetroy(parts);
         gObject_sub = Instantiate(gObject, instance.getman().transform);
